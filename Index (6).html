@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Mood Journal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #6dd5fa, #ffffff);
+        }
+        h1 {
+            color: #333;
+        }
+        .mood-btn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #happy { background-color: #ffd700; }
+        #sad { background-color: #87ceeb; }
+        #angry { background-color: #ff6b6b; }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🌈 Daily Mood Journal</h1>
+    <p>How are you feeling today?</p>
+
+    <button id="happy" class="mood-btn" onclick="showMood('happy')">😊 Happy</button>
+    <button id="sad" class="mood-btn" onclick="showMood('sad')">😢 Sad</button>
+    <button id="angry" class="mood-btn" onclick="showMood('angry')">😡 Angry</button>
+
+    <div id="result"></div>
+
+    <script>
+        function showMood(mood) {
+            let message = "";
+
+            if (mood === "happy") {
+                message = "That's awesome! Keep smiling 😊";
+            } else if (mood === "sad") {
+                message = "It's okay to feel sad. Better days are coming 💙";
+            } else if (mood === "angry") {
+                message = "Take a deep breath. Stay calm ❤️";
+            }
+
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+
+</body>
+</html>
